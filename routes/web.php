@@ -10,12 +10,24 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-
+use App\Client;
+use \Carbon\Carbon;
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('ag/simple', function() {
+	return view('angular_templates.simple');
+});
 Route::get('/test', function() {
-	$clients = \App\Client::all();
-	print_r($clients);
+	return view('dashboard.landing');
+	// $client = new Client;
+	// $client->username = 'iris.ras';
+	// $client->first_name = 'iris';
+	// $client->last_name = 'lloveras';
+	// $client->address = 'Pedro Gil';
+	// $client->schedule = Carbon::now();
+	// $client->save();
+
+	// dd(Client::all());
 });

@@ -17,7 +17,9 @@ class InitializeTables extends Migration
         {
             $table->increments('id');
             $table->string('username');
-            $table->string('password');
+            $table->string('first_name');
+            $table->string('last_name');
+            // $table->string('password');
             $table->date('schedule');
             $table->text('address');
         });    
