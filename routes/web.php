@@ -11,13 +11,17 @@
 |
 */
 use App\Client;
-use \Carbon\Carbon;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('ag/simple', function() {
-	return view('angular_templates.simple');
+Route::get('dashboard', 'DashboardController@index');
+
+// all angular templates will be redirected here
+Route::get('a/{templatename}', function($templatename) {
+	return view("angular_templates.{$templatename}");
 });
 Route::get('/test', function() {
 	return view('dashboard.landing');

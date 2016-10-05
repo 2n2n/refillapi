@@ -1,4 +1,4 @@
-angular.module('RefillApp', [])
+angular.module('RefillApp', ['ngRoute', 'CustomerModule'])
 .config(function($interpolateProvider) {
 	$interpolateProvider.startSymbol('//');
 	$interpolateProvider.endSymbol('//');
@@ -11,9 +11,10 @@ angular.module('RefillApp', [])
 	return {
 		restrict: 'E',
 		scope: true,
-		templateUrl: 'ag/simple',
+		templateUrl: 'a/simple',
 		link: function(scope, el, attr) {
 			console.log(scope);
 		}
 	}
 }])
+
