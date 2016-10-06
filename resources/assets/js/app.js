@@ -6,6 +6,4 @@
  */
 
 require('./bootstrap');
-
-alert('hello world!');
 console.log(window.angular, 'this is bower angular');

@@ -6,10 +6,7 @@
 <body>
 	@yield('content')
 	<footer>
-		<script type="text/javascript" src="js/angular.min.js"></script>
-		<script type="text/javascript" src="js/angular-route.min.js"></script>
-		<script type="text/javascript" src="js/customer/main.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
+		<script type="text/javascript" src="{{ elixir('js/app.js') }}"></script>
 	</footer>
 </body>
 </html>

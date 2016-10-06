@@ -7,3 +7,7 @@ Homestead.yaml
 .env
 refillapi.sublime-project
 refillapi.sublime-workspace
+public/css/style.css
+public/css/style.css.map
+resources/assets/css/
+resources/assets/js/dist/

@@ -8,5 +8,7 @@ window._ = require('lodash');
  */
 
 window.$ = window.jQuery = require('jquery');
+
 var angular = require('angular');
+
 console.log(angular, 'this is angular js');

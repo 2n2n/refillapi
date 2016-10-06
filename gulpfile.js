@@ -1,6 +1,5 @@
 const elixir = require('laravel-elixir');
 
-require('laravel-elixir-vue');
 
 /*
  |--------------------------------------------------------------------------
@@ -15,5 +14,11 @@ require('laravel-elixir-vue');
 
 elixir(mix => {
     mix.sass('app.scss')
-       .webpack('app.js');
+       .styles([
+           './node_modules/gentelella/build/css/custom.css',
+           'resources/assets/css/theme.css'
+        ], 'public/css/style.css')
+        .copy('node_modules/angular/angular.js', 'resources/assets/js/dist/angular.js')
+        .copy('node_modules/npm-angular-route/lib/angular-route.js', 'resources/assets/js/dist/angular-route.js')
+        .webpack('resources/assets/js/app.js');
 });
