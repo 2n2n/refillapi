@@ -2,12 +2,13 @@
 <html ng-app="RefillApp">
 <head>
 	<title>{{ $title }}</title>
+  <link rel="stylesheet" type="text/css" href="css/font-awesome/css/font-awesome.css">
 	<link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
-<body>
-	<div class="container">
-		<div class="main-container">
-			<div class="col-md-3 left_col">
+<body class="nav-md">
+<div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
               <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentellela Alela!</span></a>
@@ -16,15 +17,15 @@
             <div class="clearfix"></div>
 
             <!-- menu profile quick info -->
-            <!--<div class="profile">-->
-            <!--  <div class="profile_pic">-->
-            <!--    <img src="images/img.jpg" alt="..." class="img-circle profile_img">-->
-            <!--  </div>-->
-            <!--  <div class="profile_info">-->
-            <!--    <span>Welcome,</span>-->
-            <!--    <h2>John Doe</h2>-->
-            <!--  </div>-->
-            <!--</div>-->
+            <div class="profile">
+              <div class="profile_pic">
+                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Welcome,</span>
+                <h2>John Doe</h2>
+              </div>
+            </div>
             <!-- /menu profile quick info -->
 
             <br>
@@ -34,9 +35,9 @@
               <div class="menu_section active">
                 <h3>General</h3>
                 <ul class="nav side-menu" style="">
-                  <li class="active"><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu" style="display: block;">
-                      <li class="current-page"><a href="index.html">Dashboard</a></li>
+                  <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="index.html">Dashboard</a></li>
                       <li><a href="index2.html">Dashboard2</a></li>
                       <li><a href="index3.html">Dashboard3</a></li>
                     </ul>
@@ -79,10 +80,10 @@
                       <li><a href="other_charts.html">Other Charts</a></li>
                     </ul>
                   </li>
-                  <li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
+                  <li class="active"><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu" style="display: block;">
                       <li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>
-                      <li><a href="fixed_footer.html">Fixed Footer</a></li>
+                      <li class="current-page"><a href="fixed_footer.html">Fixed Footer</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -125,7 +126,7 @@
                         <li><a href="#level1_2">Level One</a>
                         </li>
                     </ul>
-                  </li>
+                  </li>                  
                   <li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>
                 </ul>
               </div>
@@ -151,11 +152,9 @@
             <!-- /menu footer buttons -->
           </div>
         </div>
-		</div>
-	</div>
-	
-	
-	<div class="top_nav">
+
+        <!-- top navigation -->
+        <div class="top_nav">
           <div class="nav_menu">
             <nav class="" role="navigation">
               <div class="nav toggle">
@@ -248,12 +247,28 @@
               </ul>
             </nav>
           </div>
-        </div>
-        
-    <div class="right_col" role="main" style="min-height: 755px;">
-	@yield('content')
 
-	</div>  
+        </div>
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main" style="min-height: 809px;">
+          <div class="">
+            @yield('content')
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+    </div> 
 	<footer>
 		<script type="text/javascript" src="js/app.js"></script>
 	</footer>
