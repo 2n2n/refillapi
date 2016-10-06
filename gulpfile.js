@@ -21,5 +21,6 @@ elixir(mix => {
        	.copy('./node_modules/gentelella/vendors/font-awesome', 'public/css/font-awesome')
         .copy('node_modules/angular/angular.js', 'resources/assets/js/dist/angular.js')
         .copy('node_modules/npm-angular-route/lib/angular-route.js', 'resources/assets/js/dist/angular-route.js')
+        .copy('./node_modules/gentelella/build/js/custom.js', 'resources/assets/js/dist/gentelella/custom.js')
         .webpack('resources/assets/js/app.js');
 });

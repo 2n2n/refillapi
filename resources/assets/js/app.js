@@ -6,6 +6,7 @@
  */
 
 require('./bootstrap');
+require('./dist/gentelella/custom')
 require('./modules/customer/main');
 
 angular.module('RefillApp', ['CustomerModule'])
