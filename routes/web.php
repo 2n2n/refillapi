@@ -12,6 +12,7 @@
 */
 use App\Client;
 use Carbon\Carbon;
+use App\Http\Controllers;
 use Illuminate\Http\Request;
 Route::get('/', function () {
     return view('welcome');
