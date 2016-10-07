@@ -9,6 +9,6 @@ refillapi.sublime-project
 refillapi.sublime-workspace
 resources/assets/css/
 resources/assets/js/dist/
-public/css/style.css
-public/css/style.css.map
-public/css/font-awsome/
+public/css
+public/fonts
+public/js

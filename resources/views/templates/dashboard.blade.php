@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html ng-app="RefillApp">
-<<<<<<< HEAD
   <head>
     <title>{{ $title }}</title>
     <link rel="stylesheet" href="css/style.css" type="text/css" />

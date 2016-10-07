@@ -6,10 +6,9 @@
  */
 
 require('./bootstrap');
-require('./dist/gentelella/custom')
 require('./modules/customer/main');
 
-angular.module('RefillApp', ['CustomerModule'])
+angular.module('RefillApp', [require('npm-angular-route'), 'CustomerModule'] )
 
 .config(function($interpolateProvider) {
 	$interpolateProvider.startSymbol('//');
