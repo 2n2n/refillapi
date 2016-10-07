@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="RefillApp">
+<<<<<<< HEAD
   <head>
     <title>{{ $title }}</title>
     <link rel="stylesheet" href="css/style.css" type="text/css" />
@@ -8,9 +9,9 @@
   @yield('sidebar')
   @yield('content')
 
-
   <footer>
     <script type="text/javascript" src="js/app.js"></script>
   </footer>
+  
 </body>
 </html>
