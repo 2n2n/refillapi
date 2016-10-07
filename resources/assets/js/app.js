@@ -8,7 +8,7 @@
 require('./bootstrap');
 require('./modules/customer/main');
 
-angular.module('RefillApp', [require('npm-angular-route'), 'CustomerModule'] )
+angular.module('RefillApp', ['CustomerModule'] )
 
 .config(function($interpolateProvider) {
 	$interpolateProvider.startSymbol('//');
