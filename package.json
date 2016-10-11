@@ -5,9 +5,11 @@
     "dev": "gulp watch"
   },
   "devDependencies": {
+    "bootstrap": "^3.3.7",
     "bootstrap-sass": "^3.3.7",
     "buble": "^0.13.0",
     "css-loader": "^0.25.0",
+    "font-awesome": "^4.6.3",
     "gulp": "^3.9.1",
     "jquery": "^3.1.0",
     "laravel-elixir": "^6.0.0-9",

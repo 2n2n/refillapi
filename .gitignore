@@ -7,7 +7,6 @@ Homestead.yaml
 .env
 refillapi.sublime-project
 refillapi.sublime-workspace
-resources/assets/css/
 resources/assets/js/dist/
 public/css
 public/fonts
