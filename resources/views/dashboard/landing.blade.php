@@ -1,5 +1,7 @@
 @extends('templates.dashboard')
 
+@section('sidebar')
+@endsection
 @section('deliverables')
 <div class="row">
 	<div class="col-md-12">
@@ -13,7 +15,6 @@
 		</div>
 	</div>
 </div>
-
 @endsection
 
 @section('content')
