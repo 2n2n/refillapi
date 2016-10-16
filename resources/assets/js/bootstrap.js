@@ -10,5 +10,4 @@ window._ = require('lodash');
 window.$ = window.jQuery = require('jquery');
 
 var angular = require('angular');
-require('npm-angular-route')(window, angular);
 require('bootstrap');

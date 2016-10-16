@@ -10,6 +10,6 @@ class DashboardController extends Controller
 {
     public function index() 
     {
-    	return view('dashboard.landing', ['title' => 'User Dashboard']);	
+    	return view('templates.dashboard', ['title' => 'User Dashboard']);	
     }
 }

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html ng-app="RefillApp">
+<html>
   <head>
     <title>{{ $title }}</title>
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <link rel="stylesheet" href="css/font-awesome.css" type="text/css" />
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/css/font-awesome.css" type="text/css" />
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="shortcut icon" href="{{{ asset('/img/favicon.png') }}}">
   </head>
 <body>
   <div class="so-header">
@@ -47,10 +48,20 @@
       </div>
     </div>
   </div>
+  <div class="sidebar">
+    <ul>
+      <li>
+        <a href="javascript:void(0)">Client Management</a>
+        <ul>
+          <li><a href="client">Client List</a></li>
+          <li><a href="client/create">New Client</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
   <div class="container">
-    @yield('sidebar')
     @yield('content')
-    
+    <ng-view></ng-view> 
   </div>
 
   <footer>

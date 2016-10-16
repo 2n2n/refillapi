@@ -10,29 +10,12 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-use App\Client;
-use Carbon\Carbon;
-use App\Http\Controllers;
-use Illuminate\Http\Request;
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('dashboard', 'DashboardController@index');
+Route::get('/', 'DashboardController@index');
 
-// all angular templates will be redirected here
-Route::get('a/{templatename}', function($templatename) {
-	return view("angular_templates.{$templatename}");
-});
-Route::get('/test', function() {
-	return view('dashboard.landing');
-	// $client = new Client;
-	// $client->username = 'iris.ras';
-	// $client->first_name = 'iris';
-	// $client->last_name = 'lloveras';
-	// $client->address = 'Pedro Gil';
-	// $client->schedule = Carbon::now();
-	// $client->save();
+Route::get('client', 'ClientController@index');
+Route::get('client/create', 'ClientController@create');
+Route::get('client/delete', 'ClientController@delete');
+Route::post('client/register', 'ClientController@register');
+Route::post('client/remove', 'ClientController@remove');
 
-	// dd(Client::all());
-});

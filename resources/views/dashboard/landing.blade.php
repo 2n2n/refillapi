@@ -1,8 +1,3 @@
-@extends('templates.dashboard')
-
-@section('sidebar')
-@endsection
-@section('deliverables')
 <div class="row">
 	<div class="col-md-12">
 		<div ng-controller="simpleController as simple">
@@ -15,8 +10,3 @@
 		</div>
 	</div>
 </div>
-@endsection
-
-@section('content')
-	@yield('deliverables')
-@endsection
