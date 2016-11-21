@@ -1,0 +1,20 @@
+
+module my-httpd 1.0;
+
+require {
+	type httpd_user_content_t;
+	type httpd_t;
+	class dir { add_name read write };
+	class file { create write };
+}
+
+#============= httpd_t ==============
+
+#!!!! This avc can be allowed using the boolean 'httpd_unified'
+allow httpd_t httpd_user_content_t:dir add_name;
+
+#!!!! This avc is allowed in the current policy
+allow httpd_t httpd_user_content_t:dir { read write };
+
+#!!!! This avc can be allowed using the boolean 'httpd_unified'
+allow httpd_t httpd_user_content_t:file { create write };

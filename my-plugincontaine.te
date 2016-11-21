@@ -1,0 +1,11 @@
+
+module my-plugincontaine 1.0;
+
+require {
+	type tty_device_t;
+	type mozilla_plugin_t;
+	class chr_file { read write };
+}
+
+#============= mozilla_plugin_t ==============
+allow mozilla_plugin_t tty_device_t:chr_file { read write };
