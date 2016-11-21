@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\UserRole;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 
@@ -15,7 +16,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        print_r(User::all());
+        return view('user.index', ['users' => User::all()] );
     }
 
     /**
@@ -25,7 +26,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.create', [
+            'roles' => UserRole::all()
+        ]);
     }
 
     /**
@@ -36,7 +39,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        print_r($request->all());
     }
 
     /**
