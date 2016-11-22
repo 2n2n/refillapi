@@ -39,7 +39,13 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        print_r($request->all());
+        $user = new User;
+        $user->password     = $request->input('password');
+        $user->name         = $request->input('name');
+        $user->user_type  = $request->input('role');
+        $user->email        = $request->input('email');
+
+        $user->save();
     }
 
     /**
@@ -84,6 +90,6 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        echo "destroy";
     }
 }

@@ -31,7 +31,7 @@
                 <hr>
                 <div class="form-group">
                     <label for="pwd">Password:</label>
-                    <input name="confirm_password" type="password" class="form-control" id="pwd">
+                    <input name="password" type="password" class="form-control" id="pwd">
                 </div>
                 <div class="form-group">
                     <label for="pwd">Confirm Password:</label>

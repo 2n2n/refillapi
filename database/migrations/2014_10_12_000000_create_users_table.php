@@ -14,10 +14,10 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('username', 50)->unique();
+            $table->string('username', 50)->default(''); // app level should be unique;
             $table->string('name');
-            $table->integer('client_type')->default('1');
-            $table->string('email')->unique();
+            $table->integer('user_type')->default('1');
+            $table->string('email')->default(''); //app level should be required when created a user account;
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

@@ -24,7 +24,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    function role() {
-        return $this->hasOne('App\UserRole');
+    function roleName()
+    {
+        return $this->userRole()->get()[0]->role;
+    }
+    function userRole() {
+        return $this->belongsTo('App\UserRole', 'id');
     }
 }
