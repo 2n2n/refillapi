@@ -11,6 +11,6 @@ class UserRole extends Model
 
     function users()
     {
-        return $this->hasMany('\App\User', 'id', 'user_type');
+        return $this->hasMany('\App\User', 'usertype_id');
     }
 }

@@ -29,7 +29,7 @@
                             <td>{{ $user->username }}</td>
                             <td>{{ $user->name }}</td>
                             <td>{{ $user->email }}</td>
-                            <td>{{ $user->roleName() }}</td>
+                            <td>{{ $user->userRole->role }}</td>
                             <td>{{ $user->created_at }}</td>
                             <td>
                                 <a href="/user/{{$user->id}}/edit" class="btn btn-primary">Edit</a>

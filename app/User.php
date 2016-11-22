@@ -26,9 +26,9 @@ class User extends Authenticatable
 
     function roleName()
     {
-        return $this->userRole()->get()[0]->role;
+        return $this->usertype;
     }
     function userRole() {
-        return $this->belongsTo('App\UserRole', 'id');
+        return $this->belongsTo('App\UserRole', 'usertype_id');
     }
 }

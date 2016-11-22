@@ -16,7 +16,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('user.index', ['users' => User::all()] );
+        $roles = UserRole::find(['id' => 4])->first();
+        return view('user.index', ['users' => $roles->users ] );
     }
 
     /**
@@ -42,10 +43,11 @@ class UserController extends Controller
         $user = new User;
         $user->password     = $request->input('password');
         $user->name         = $request->input('name');
-        $user->user_type  = $request->input('role');
+        $user->usertype_id      = $request->input('role');
         $user->email        = $request->input('email');
 
         $user->save();
+        redirect('/user');
     }
 
     /**
