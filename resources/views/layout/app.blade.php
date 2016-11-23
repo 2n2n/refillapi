@@ -9,7 +9,11 @@
   </head>
   <body>
     <div class="container">
+      @include('layout.sidebar')
       @yield('content')
     </div>
+    <footer>
+      @yield('scripts')
+    </footer>
   </body>
 </html>

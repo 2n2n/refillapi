@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration
             $table->string('username', 50)->default(''); // app level should be unique;
             $table->string('name');
             $table->integer('usertype_id')->default('1');
+            $table->string('address')->default('');
             $table->string('email')->default(''); //app level should be required when created a user account;
             $table->string('password');
             $table->rememberToken();

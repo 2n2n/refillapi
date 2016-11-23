@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\User;
 use App\UserRole;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests;
+use Validator;
+use Input;
 
 class UserController extends Controller
 {
@@ -16,7 +19,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $roles = UserRole::find(['id' => 4])->first();
+        $roles = UserRole::findOrFail(3);
         return view('user.index', ['users' => $roles->users ] );
     }
 
@@ -40,14 +43,33 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $user = new User;
-        $user->password     = $request->input('password');
-        $user->name         = $request->input('name');
-        $user->usertype_id      = $request->input('role');
-        $user->email        = $request->input('email');
+        $rules = [
+            'name'              => 'required',
+            'password'          => 'confirmed:confirm_password',
+            'confirm_password'  => 'required',
+            'email'             => 'required|unique:users,email'
+        ];
 
-        $user->save();
-        redirect('/user');
+        $validator = Validator::make($request->all(), $rules);
+
+        if( $validator->fails() )
+        {
+            return Redirect::to('/user/create')
+                ->withErrors($validator)
+                ->withInput($request->all());
+        }
+        else 
+        {
+            $user = new User;
+            $user->password     = $request->input('password');
+            $user->name         = $request->input('name');
+            $user->address      = $request->input('address');
+            $user->usertype_id  = $request->input('role');
+            $user->email        = $request->input('email');
+
+            $user->save();
+            return redirect('user');
+        }
     }
 
     /**
@@ -69,7 +91,10 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::where(['id' => $id])->first();
+        return view('user.edit')
+            ->with('user', $user)
+            ->with('roles', UserRole::all());
     }
 
     /**
@@ -81,7 +106,49 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $rules = [
+            'name'      => 'required',
+        ];
+
+        // fallback if email is filled and email is not the same as own email. do validation.
+        if( !empty($request->input('email')) )
+        {
+            $user =  User::where('id', $id)->first();
+            if( $user->email != $request->input('email') ) { $rules['email'] = 'unique:users,email'; }
+        }
+
+        if( !empty($request->input('password')) )
+        {
+            $rules['password']          = 'confirmed:confirm_password';
+            $rules['confirm_password']  = 'required';
+        }
+
+        $validator = validator::make($request->all(), $rules);
+        
+        if( $validator->fails() )
+        {
+            return Redirect::to('user/'.$id.'/edit')
+                ->withErrors($validator)
+                ->withInput($request->except(['password']));
+        }
+        else 
+        {
+           $user =  User::where('id', $id)->first();
+           $user->name      = $request->input('name');
+           $user->address   = $request->input('address');
+           $user->email     = $request->input('email');
+           $user->usertype_id = $request->input('role');
+
+           if( !empty($request->input('password')) )
+           {
+                $user->password = $request->input('password');
+           }
+
+           $user->save();
+
+           return Redirect::to('user/'.$id.'/edit')
+                ->with('user', $user);
+        }
     }
 
     /**
@@ -92,6 +159,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        echo "destroy";
+        User::destroy($id);
+        return Redirect::to('/user');
     }
 }

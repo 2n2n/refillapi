@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'usertype_id','password',
     ];
 
     /**
@@ -24,11 +24,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    function roleName()
+    function getUsernameAttribute($value) 
     {
-        return $this->usertype;
+        return empty($value)? 'Inactive' : $value;
     }
-    function userRole() {
+
+    function userRole() 
+    {
         return $this->belongsTo('App\UserRole', 'usertype_id');
     }
 }
