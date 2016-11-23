@@ -1,7 +1,7 @@
 <?php
 
 namespace App;
-
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
@@ -15,5 +15,10 @@ class Client extends Model
     	'first_name', 'last_name', 'phone_no', 'mobile_no', 'created_at', 'address'
     ];
 
+    function getCreatedAtAttribute($date)
+    {
+    	$newdate = new Carbon($date);
+    	return $newdate->format('M-d-Y');
+    }
 
 }

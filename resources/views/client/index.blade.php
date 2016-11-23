@@ -15,6 +15,7 @@
 							<th>address</th>
 							<th>Contact</th>
 							<th>Registered Since</th>
+							<th>Actions</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -30,6 +31,7 @@
 								<td>{{ $client->address }}</td>
 								<td>{{ $client->mobile_no }} <br> {{ $client->phone_no }}</td>
 								<td>{{ $client->created_at }}</td>
+								<td><a href='/client/{{ $client->id }}' class='btn btn-info'>Details</a></td>
 							</tr>
 							@endforeach
 						@endif
