@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+Use App\Client;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -15,7 +15,9 @@ class ClientController extends Controller
      */
     public function index()
     {
-        return view('client.index');
+        $clients = Client::all();
+        return view('client.index')
+            ->with('clients',  $clients);
     }
 
     /**
