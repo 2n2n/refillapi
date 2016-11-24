@@ -50,7 +50,8 @@ class ClientController extends Controller
     public function show($id)
     {
         $affected = Client::findOrFail($id)->first();
-        dd($affected);
+        return view('client.show')
+            ->with('client', $affected);
     }   
 
     /**
